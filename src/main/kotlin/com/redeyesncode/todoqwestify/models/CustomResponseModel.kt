@@ -5,14 +5,10 @@ import lombok.Setter
 
 
 
-class CustomStatusCodeModel : StatusCodeModel {
-    private var data: Any
-
-    constructor(status: String?, code: Int, message: String?, data: Any) : super(status!!, code, message) {
-        this.data = data
-    }
-
-    constructor(status: String?, code: Int, data: Any) : super(status!!, code) {
-        this.data = data
-    }
-}
+// CustomStatusCodeModel to hold additional data
+data class CustomStatusCodeModel<T>(
+    override var status: String,
+    override var code: Int,
+    override var message: String? = null,
+    val data: T? = null // Generic type to hold any data
+) : StatusCodeModel(status, code, message)
