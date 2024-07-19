@@ -33,7 +33,7 @@ Type the following command in your terminal to run the app -
 mvn spring-boot:run
 ```
 
-The app will start running at <http://localhost:8080>.
+The app will start running at <http://localhost:3577>.
 
 ## Explore Rest APIs
 
